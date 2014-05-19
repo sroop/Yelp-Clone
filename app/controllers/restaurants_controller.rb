@@ -6,4 +6,9 @@ class RestaurantsController < ApplicationController
 	def new
 	end
 
+	def create
+		Restaurant.create({name: 'McDonalds', cuisine: 'Fast Food'})
+		redirect_to('/restaurants')
+	end
+
 end
