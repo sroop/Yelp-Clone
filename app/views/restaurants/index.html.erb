@@ -1,8 +1,10 @@
 
 <% if @restaurants.any? %>
-	<% @restaurants.each do |restaurant| %>
-		<%= restaurant.name %>
-	<% end%>
+	<ul>
+		<% @restaurants.each do |restaurant| %>
+			<li><%= restaurant.name %></li>
+		<% end%>
+	</ul>
 <% else %>
 	No restaurants yet
 <% end %>

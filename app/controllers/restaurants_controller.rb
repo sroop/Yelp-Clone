@@ -9,7 +9,7 @@ class RestaurantsController < ApplicationController
 	end
 
 	def create
-		Restaurant.create({name: 'McDonalds', cuisine: 'Fast Food'})
+		Restaurant.create( params[:restaurant].permit(:name, :address) )
 		redirect_to('/restaurants')
 	end
 
