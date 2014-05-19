@@ -8,3 +8,9 @@ describe 'Restaurants index page' do
 		end
 	end
 end
+
+describe 'Creating a restaurant' do
+	it 'adds a restaurant to the restaurant index' do
+		visit '/restaurants/new'
+	end
+end
