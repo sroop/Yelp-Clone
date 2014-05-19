@@ -27,9 +27,9 @@ describe 'Editing a restaurant' do
 	it 'edits an existing restaurant in the restaurant index' do
 		visit '/restaurants'
 		expect(page).to have_content('McDonalds')
-		click_on 'Edit McDonalds'
+		click_on 'Edit'
 		fill_in 'Name', with: 'Burger King'
-		click_button 'Update'
+		click_button 'Add'
 		expect(page).to have_content('Burger King')
 	end
 end
