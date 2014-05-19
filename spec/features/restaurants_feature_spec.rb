@@ -12,5 +12,10 @@ end
 describe 'Creating a restaurant' do
 	it 'adds a restaurant to the restaurant index' do
 		visit '/restaurants/new'
+		fill_in 'Name', with: 'McDonalds'
+		fill_in 'Cuisine', with: 'Fast food'
+		click_button 'Add'
+		expect(current_path).to eq('/restaurants')
+		expect(page).to have_content('McDonalds')
 	end
 end
