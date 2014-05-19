@@ -2,7 +2,11 @@
 <% if @restaurants.any? %>
 	<ul>
 		<% @restaurants.each do |restaurant| %>
-			<li><%= restaurant.name %></li>
+			<li><%= restaurant.name %> 
+				<a href="/restaurants/<%= restaurant.id %>/edit" >
+					Edit <%= restaurant.name %>
+				</a>
+			</li>
 		<% end%>
 	</ul>
 <% else %>
