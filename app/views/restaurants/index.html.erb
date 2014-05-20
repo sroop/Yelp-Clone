@@ -2,12 +2,12 @@
 
 
 	<%= link_to "Create a restaurant", new_restaurant_path %>
-	
+
 <section id="restaurant-list">
 	<% if @restaurants.any? %>
 		<ul>
 			<% @restaurants.each do |restaurant| %>
-				<li><span class="restaurant-name"><%= restaurant.name %></span> </li>
+				<li><span class="restaurant-name"><%= restaurant.name %> 0 reviews</span> </li>
 					<span class="amend-button"><%= link_to "Edit", edit_restaurant_path(restaurant) %></span>
 					<span class="amend-button"><%= link_to "Delete", restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' } %></span>
 				</li>
