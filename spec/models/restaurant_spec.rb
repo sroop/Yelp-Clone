@@ -13,6 +13,5 @@ describe Restaurant do
 			it 'when the cuisine is blank' do
 				expect(restaurant).to have(1).error_on(:cuisine)
 			end
-
 	end
 end

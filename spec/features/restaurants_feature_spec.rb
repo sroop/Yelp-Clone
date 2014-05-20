@@ -10,13 +10,20 @@ describe 'Restaurants index page' do
 end
 
 describe 'Creating a restaurant' do
-	it 'adds a restaurant to the restaurant index' do
+	it 'adds a restaurant to the restaurant index (happy path)' do
 		visit '/restaurants/new'
 		fill_in 'Name', with: 'McDonalds'
 		fill_in 'Cuisine', with: 'Fast food'
 		click_button 'Add'
 		expect(current_path).to eq('/restaurants')
 		expect(page).to have_content('McDonalds')
+	end
+
+	it 'does not add a restaurant to the restaurant index (sad path)' do
+		visit '/restaurants/new'
+		fill_in 'Name', with: 'McDonalds'
+		click_button 'Add'
+		expect(page).to_not have_content('McDonalds')
 	end
 end
 
