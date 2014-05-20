@@ -51,6 +51,7 @@ describe 'Editing a restaurant' do
 			visit '/restaurants'
 			expect(page).to have_content('McDonalds')
 			click_on 'Edit'
+			fill_in 'Name', with: nil
 			click_button 'Add'
 			expect(page).to have_content('error')
 		end
