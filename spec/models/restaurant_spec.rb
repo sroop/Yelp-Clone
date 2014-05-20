@@ -4,14 +4,16 @@ describe Restaurant do
 
 	context 'It shows an error' do
 
-			let(:restaurant) { Restaurant.new(name: nil) }
+			let(:restaurant1) { Restaurant.new(name: nil, cuisine: "American") }
+			let(:restaurant2) { Restaurant.new(name: "The Diner", cuisine: nil) }
 
 			it 'when the name is blank' do
-				expect(restaurant).to have(1).error_on(:name)
+				expect(restaurant1).to have(1).error_on(:name)
 			end
 
 			it 'when the cuisine is blank' do
-				expect(restaurant).to have(1).error_on(:cuisine)
+				expect(restaurant2).to have(1).error_on(:cuisine)
 			end
+
 	end
 end
