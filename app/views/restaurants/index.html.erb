@@ -1,13 +1,16 @@
+<header id="yelp-header">Yelp</header>
 
-<% if @restaurants.any? %>
-	<ul>
-		<% @restaurants.each do |restaurant| %>
-			<li><%= restaurant.name %> 
-				<%= link_to "Edit", edit_restaurant_path(restaurant) %>
-				<%= link_to "Delete", restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' } %>
-			</li>
-		<% end%>
-	</ul>
-<% else %>
-	No restaurants yet
-<% end %>
+<section id="restaurant-list">
+	<% if @restaurants.any? %>
+		<ul>
+			<% @restaurants.each do |restaurant| %>
+				<li><span class="restaurant-name"><%= restaurant.name %></span> </li>
+					<span class="amend-button"><%= link_to "Edit", edit_restaurant_path(restaurant) %></span>
+					<span class="amend-button"><%= link_to "Delete", restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' } %></span>
+				</li>
+			<% end%>
+		</ul>
+	<% else %>
+		No restaurants yet
+	<% end %>
+</section>

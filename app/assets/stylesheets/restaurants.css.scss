@@ -1,3 +1,38 @@
 // Place all the styles related to the restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#yelp-header {
+	width: 100%;
+	height: 40px;
+	background-color: white;
+	padding: 10px;
+}
+
+#restaurant-list {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	width: 500px;
+	height: auto;
+	background-color: white;
+	padding: 20px;
+}
+
+li {
+	list-style-type: none;
+}
+
+.restaurant-name {
+	float: left;
+	margin-top: -7px;
+	font-size: 20px;
+}
+
+.amend-button {
+	float: right;
+	margin-top: -7px;
+	margin-left: 20px;
+	font-size: 20px;
+}
+
