@@ -24,7 +24,7 @@ describe 'Creating a restaurant' do
 		fill_in 'Name', with: 'McDonalds'
 		click_button 'Add'
 		expect(page).to_not have_content('McDonalds')
-		expect(current_path).to eq('/restaurants/new')
+		expect(page).to have_content("1 error prohibited this post from being saved")
 	end
 end
 

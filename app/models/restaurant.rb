@@ -1,5 +1,6 @@
 class Restaurant < ActiveRecord::Base
 
-	validates :name, :cuisine, presence: true
+	validates :name, presence: true, uniqueness: true
+	validates :cuisine, presence: true
 
 end
