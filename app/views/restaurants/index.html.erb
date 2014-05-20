@@ -1,5 +1,8 @@
 <header id="yelp-header">Yelp</header>
 
+
+	<%= link_to "Create a restaurant", new_restaurant_path %>
+	
 <section id="restaurant-list">
 	<% if @restaurants.any? %>
 		<ul>
@@ -13,4 +16,5 @@
 	<% else %>
 		No restaurants yet
 	<% end %>
+
 </section>
