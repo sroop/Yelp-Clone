@@ -35,8 +35,8 @@
 				</div>
 				
 				<div id="restaurant-actions">
-					<span class="amend-button"><%= link_to "Edit", edit_restaurant_path(restaurant) %></span>
-					<span class="amend-button"><%= link_to "Delete", restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' } %></span>
+					<span class="amend-button"><%= link_to "✐", edit_restaurant_path(restaurant) %></span>
+					<span class="amend-button"><%= link_to "✖", restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' } %></span>
 				</div>
 
 					
@@ -46,7 +46,7 @@
 
 					<%= f.label :thoughts %>
 					<%= f.text_area :thoughts %>
-
+					
 					<%= f.label :rating %>
 					<%= f.select :rating, 1..5 %>
 
@@ -58,7 +58,7 @@
 					<div id="review-container">
 					<% restaurant.reviews.reverse.each do |review| %>
 						<li>
-							<strong><%= review.title %></strong>
+							<strong><%= review.title %></strong><br>
 							<%= review.thoughts %><br>
 							<strong><%= star_rating(review.rating) %></strong>
 						</li>

@@ -15,7 +15,11 @@
  *= require_self
  */
 
+* {
+	box-sizing: border-box;
+}
 
 body {
 	background-color: #FFF585;
+	font-family: "Rokkitt"
 }

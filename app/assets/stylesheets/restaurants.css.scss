@@ -22,10 +22,6 @@
 	height: auto;
 }
 
-li {
-	list-style-type: none;
-}
-
 .restaurant-name {
 	float: left;
 	margin-top: -7px;
@@ -39,7 +35,15 @@ li {
 	display: inline-block;
 	margin-top: -7px;
 	margin-left: 10px;
-	font-size: 16px;
+	font-size: 20px;
+	text-decoration: none;
+	opacity: 0.5;
+	color: black;
+}
+
+.amend-button:hover {
+	opacity: 1;
+	text-decoration: none;
 }
 
 #review-summary {
@@ -73,12 +77,13 @@ li {
 	border: 2px solid #FFF585;
 	padding: 30px;
 	background-color: white;
+	border-radius: 10px;
 }
 
 #flash-notice {
 	position: absolute;
 	width: 100%;
-	margin-top: 86px;
+	margin-top: 60px;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
@@ -86,14 +91,42 @@ li {
 
 #review_title {
 	width: 100%;
-	height: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
 }
 
 #review_thoughts {
 	width: 100%;
-	height: 60px;
+	height: 80px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 10px;
+	margin-bottom: 10px;
 }
 
 #review-container {
 	margin-top: 20px;
+}
+
+li {
+	line-height: 1.5;
+	list-style-type: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-top: 2px solid #FFF585;
+}
+
+input[type=submit] {
+	background-color: #000;
+	color: white;
+	border: none;
+	cursor: pointer;
+	float: right;
+	border-radius: 4px;
+	opacity: 0.5
+}
+
+input[type=submit]:hover {
+	opacity: 1;
 }
