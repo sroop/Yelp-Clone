@@ -7,7 +7,7 @@ class Restaurant < ActiveRecord::Base
 
 	def average_rating
 		if reviews.any?
-			reviews.average(:rating)
+			reviews.average(:rating).round(1)
 		else
 			"N/A"
 		end
