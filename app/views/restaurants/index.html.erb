@@ -16,7 +16,11 @@
 					<div id="display-reviews">
 					<ul>
 						<% restaurant.reviews.each do |review| %>
-							<li><strong><%= review.rating %></strong> <%= review.thoughts %></li>
+							<li>
+								<h5><strong><%= review.title %></strong></h5>
+								<h4><strong><%= review.rating %></strong></h4>
+								<p><%= review.thoughts %></p>
+							</li>
 						<% end %>
 					</ul>
 					</div>
