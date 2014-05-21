@@ -16,4 +16,45 @@ describe Restaurant do
 			end
 
 	end
+
+end
+
+describe '#average_rating' do
+
+
+	let(:restaurant) { Restaurant.create(name: "The Diner", cuisine: "American") }
+
+	context 'calculates the average rating for zero reviews' do
+
+		it 'says N/A for zero reviews' do
+			expect(restaurant.average_rating).to eq('N/A')
+		end
+
+	end
+
+	context 'says the rating for one review' do
+
+		before(:each) do
+			restaurant.reviews.create(rating: 3)
+		end
+
+		it 'says 3 for one review' do
+			expect(restaurant.average_rating).to eq(3)
+		end
+			
+	end
+
+	context 'calculates the average for more than 1 review' do
+
+		before(:each) do
+			restaurant.reviews.create(rating: 4)
+			restaurant.reviews.create(rating: 5)
+		end
+
+		it 'says 4.5 as the average for 2 reviews' do
+			expect(restaurant.average_rating).to eq(4.5)
+		end
+
+	end
+
 end

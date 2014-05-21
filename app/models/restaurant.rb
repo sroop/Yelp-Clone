@@ -5,4 +5,12 @@ class Restaurant < ActiveRecord::Base
 
 	has_many :reviews
 
+	def average_rating
+		if reviews.any?
+			reviews.average(:rating)
+		else
+			"N/A"
+		end
+	end
+
 end

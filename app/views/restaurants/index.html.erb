@@ -9,6 +9,7 @@
 		<% @restaurants.each do |restaurant| %>
 				<span class="restaurant-name"><h2><%= restaurant.name %> | <%= restaurant.cuisine %></h2></span>
 				<h4 id="review-count"><%= pluralize restaurant.reviews.count, 'review' %></h4>
+				<h4 id="review-count">Average review </h4>
 					<span class="amend-button"><%= link_to "Edit", edit_restaurant_path(restaurant) %></span>
 					<span class="amend-button"><%= link_to "Delete", restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' } %></span>
 					<span class="amend-button"><%= link_to "Review", new_restaurant_review_path(restaurant) %></span>
