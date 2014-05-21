@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
-  resources :restaurants
+  resources :restaurants do
+    resources :reviews
+  end
+
+#nesting the reviews properties inside of restaurants
+#is rails way of creating a child model for a parent model
+#ie, creating a relationship.
+#eg: yelpclone.com/restaurant/kfc/reviews
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
