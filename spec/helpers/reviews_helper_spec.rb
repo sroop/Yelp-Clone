@@ -11,5 +11,14 @@ require 'spec_helper'
 #   end
 # end
 describe ReviewsHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe "#star_rating" do
+  	
+  	it 'shows 5 full stars when the rating is 5' do
+  		expect(star_rating(5)).to eq("★★★★★")
+  	end
+
+  end
+
+
 end
