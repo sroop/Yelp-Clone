@@ -10,7 +10,7 @@ describe 'writing reviews' do
 		expect(page).to have_content('0 reviews')
 	end
 
-	it 'adds the review to the restaurant' do
+	it 'adds the review to the restaurant', js: true do
 		visit '/restaurants'
 		fill_in 'Title', with: 'hangover food'
 		fill_in 'Thoughts', with: 'Pretty good...'
