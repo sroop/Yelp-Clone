@@ -8,7 +8,7 @@ $(document).ready(function() {
 				
 				var template = $('#ajax-reviews').html();
 					var rendered = Mustache.render(template, response);
-						siblingList.append(rendered);
+						siblingList.prepend(rendered);
 
 			}, 'json');
 	

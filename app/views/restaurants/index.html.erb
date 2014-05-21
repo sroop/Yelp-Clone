@@ -4,6 +4,8 @@
 	<li>
 
 	<strong> {{ title }} </strong>
+			{{ thoughts }}
+			{{ rating }}
 
 	</li>
 </template>
@@ -49,11 +51,11 @@
 				
 	
 				<ul>
-					<% restaurant.reviews.each do |review| %>
+					<% restaurant.reviews.reverse.each do |review| %>
 						<li>
-							<strong> </strong>
-							<h4><strong><%= star_rating(review.rating) %></strong></h4>
-							<p><%= review.thoughts %></p>
+							<strong><%= review.title %></strong>
+							<%= review.thoughts %>
+							<strong><%= star_rating(review.rating) %></strong>
 						</li>
 					<% end %>
 				</ul>
