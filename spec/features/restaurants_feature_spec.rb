@@ -38,7 +38,7 @@ describe 'Editing a restaurant' do
 		it 'saves the updated restaurant' do
 			visit '/restaurants'
 			expect(page).to have_content('McDonalds')
-			click_on 'Edit'
+			click_on '✐'
 			fill_in 'Name', with: 'Burger King'
 			click_button 'Add'
 			expect(page).to have_content('Burger King')
@@ -50,7 +50,7 @@ describe 'Editing a restaurant' do
 		it 'displays an error' do
 			visit '/restaurants'
 			expect(page).to have_content('McDonalds')
-			click_on 'Edit'
+			click_on '✐'
 			fill_in 'Name', with: nil
 			click_button 'Add'
 			expect(page).to have_content('error')
@@ -66,7 +66,7 @@ describe 'Delete a restaurant' do
 	it 'deletes an existing restaurant in the restaurant index' do
 		visit '/restaurants'
 		expect(page).to have_content('McDonalds')
-		click_on 'Delete'
+		click_on '✖'
 		expect(page).to_not have_content('McDonalds')
 		expect(page).to have_content("Successfully deleted!")
 	end
