@@ -2,6 +2,7 @@ class RestaurantsController < ApplicationController
 
 	def index
 		@restaurants = Restaurant.all
+		@review = Review.new
 	end
 
 	def new
@@ -24,7 +25,7 @@ class RestaurantsController < ApplicationController
 
 	def update
 		@restaurant = Restaurant.find(params[:id])
-		
+
 		if @restaurant.update( params[:restaurant].permit(:name, :cuisine) )
 			redirect_to('/restaurants')
 		else

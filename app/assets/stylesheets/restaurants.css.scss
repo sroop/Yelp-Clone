@@ -26,24 +26,37 @@ li {
 .restaurant-name {
 	float: left;
 	margin-top: -7px;
-	font-size: 20px;
-}
-
-#review-count {
-	float:left;
-	margin-top: -7px;
-	font-size: 20px;
-	margin-left: 20px;
+	margin-right: 15px;
+	font-size: 25px;
 }
 
 .amend-button {
-	float: right;
+	display: inline-block;
 	margin-top: -7px;
-	margin-left: 20px;
+	margin-left: 10px;
 	font-size: 20px;
+}
+
+#average-rating {
+	clear: both;
+	position: relative;
+	margin-top: 6px;
+}
+
+#review-count {
+	position: relative;
+	margin-top: -2px;
+	font-size: 20px;
+	margin-left: 20px;
 }
 
 #display-reviews {
 	clear: both;
 	margin-top: 20px;
+}
+
+#restaurant-actions {
+	position: relative;
+	float:right;
+	margin-top: -38px;
 }
