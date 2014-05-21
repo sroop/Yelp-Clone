@@ -1,5 +1,13 @@
 <header id="yelp-header">Yelp</header>
 
+<template id="ajax-reviews">
+	<li>
+
+	<strong> {{ title }} </strong>
+
+	</li>
+</template>
+
 
 	<%= link_to "Create a restaurant", new_restaurant_path %>
 
@@ -7,6 +15,9 @@
 	<% if @restaurants.any? %>
 
 		<% @restaurants.each do |restaurant| %>
+
+			<div id="restaurant-parent-container">
+
 				<span class="restaurant-name">
 					<h2><%= restaurant.name %> | <%= restaurant.cuisine %></h2>
 				</span>
@@ -20,35 +31,36 @@
 				<div id="restaurant-actions">
 					<span class="amend-button"><%= link_to "Edit", edit_restaurant_path(restaurant) %></span>
 					<span class="amend-button"><%= link_to "Delete", restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' } %></span>
-				</div>	
-
-				<div id="review-form">
-					<%= form_for [restaurant, @review] do |f| %>
-						<%= f.label :title %>
-						<%= f.text_area :title %>
-
-						<%= f.label :thoughts %>
-						<%= f.text_area :thoughts %>
-
-						<%= f.label :rating %>
-						<%= f.select :rating, 1..5 %>
-
-						<%= f.submit 'Leave Review' %>
-					<% end %>
 				</div>
+
 					
-					<div id="display-reviews">
-					<ul>
-						<% restaurant.reviews.each do |review| %>
-							<li>
-								<h5><strong><%= review.title %></strong></h5>
-								<h4><strong><%= star_rating(review.rating) %></strong></h4>
-								<p><%= review.thoughts %></p>
-							</li>
-						<% end %>
-					</ul>
-					</div>
-			<% end%>
+				<%= form_for [restaurant, @review] do |f| %>
+					<%= f.label :title %>
+					<%= f.text_area :title %>
+
+					<%= f.label :thoughts %>
+					<%= f.text_area :thoughts %>
+
+					<%= f.label :rating %>
+					<%= f.select :rating, 1..5 %>
+
+					<%= f.submit 'Leave Review' %>
+				<% end %>
+				
+	
+				<ul>
+					<% restaurant.reviews.each do |review| %>
+						<li>
+							<strong> </strong>
+							<h4><strong><%= star_rating(review.rating) %></strong></h4>
+							<p><%= review.thoughts %></p>
+						</li>
+					<% end %>
+				</ul>
+
+
+			</div>
+		<% end%>
 	<% else %>
 		No restaurants yet
 	<% end %>
