@@ -13,6 +13,7 @@ describe 'writing review' do
 	it 'adds the review to the restaurant' do
 		visit '/restaurants'
 		click_on 'Review'
+		fill_in 'Title', with: 'hangover food'
 		fill_in 'Thoughts', with: 'Pretty good...'
 		select '4', from: 'Rating'
 		click_button 'Leave Review'

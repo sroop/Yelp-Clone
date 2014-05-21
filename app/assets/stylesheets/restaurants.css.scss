@@ -29,6 +29,13 @@ li {
 	font-size: 20px;
 }
 
+#review-count {
+	float:left;
+	margin-top: -7px;
+	font-size: 20px;
+	margin-left: 20px;
+}
+
 .amend-button {
 	float: right;
 	margin-top: -7px;
@@ -36,3 +43,7 @@ li {
 	font-size: 20px;
 }
 
+#display-reviews {
+	clear: both;
+	margin-top: 20px;
+}
