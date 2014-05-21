@@ -7,6 +7,11 @@
 	height: 40px;
 	background-color: white;
 	padding: 10px;
+	display: flex;
+}
+
+#create-restaurant {
+	align-content: flex-center;
 }
 
 #restaurant-list {
@@ -15,8 +20,6 @@
 	margin-top: 50px;
 	width: 500px;
 	height: auto;
-	background-color: white;
-	padding: 20px;
 }
 
 li {
@@ -27,36 +30,70 @@ li {
 	float: left;
 	margin-top: -7px;
 	margin-right: 15px;
+	margin-bottom: 5px;
 	font-size: 25px;
+	font-family: "Aldrich";
 }
 
 .amend-button {
 	display: inline-block;
 	margin-top: -7px;
 	margin-left: 10px;
-	font-size: 20px;
+	font-size: 16px;
+}
+
+#review-summary {
+	position: relative;
+	display: flex;
+	clear:both;
+	margin-top: 10px;
 }
 
 #average-rating {
-	clear: both;
+	margin-top: 5px;
 	position: relative;
-	margin-top: 6px;
+	margin-left: 15px;
 }
 
 #review-count {
+	margin-top: 5px;
 	position: relative;
-	margin-top: -2px;
-	font-size: 20px;
-	margin-left: 20px;
-}
-
-#display-reviews {
-	clear: both;
-	margin-top: 20px;
+	font-size: 16px;
 }
 
 #restaurant-actions {
 	position: relative;
 	float:right;
-	margin-top: -38px;
+	margin-top: -48px;
+}
+
+#restaurant-parent-container {
+	margin-top: 10px;
+	margin-bottom: 40px;
+	border: 2px solid #FFF585;
+	padding: 30px;
+	background-color: white;
+}
+
+#flash-notice {
+	position: absolute;
+	width: 100%;
+	margin-top: 86px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+#review_title {
+	width: 100%;
+	height: 20px;
+}
+
+#review_thoughts {
+	width: 100%;
+	height: 60px;
+}
+
+#review-container {
+	margin-top: 20px;
 }

@@ -1,4 +1,6 @@
-<header id="yelp-header">Yelp</header>
+<header id="yelp-header">
+<div id="create-restaurant"><%= link_to "Create a restaurant", new_restaurant_path %></div>
+</header>
 
 <template id="ajax-reviews">
 	<li>
@@ -10,8 +12,7 @@
 	</li>
 </template>
 
-
-	<%= link_to "Create a restaurant", new_restaurant_path %>
+	
 
 <section id="restaurant-list">
 	<% if @restaurants.any? %>
@@ -24,11 +25,14 @@
 					<h2><%= restaurant.name %> | <%= restaurant.cuisine %></h2>
 				</span>
 
-				<h4 id="review-count">
-					<%= pluralize restaurant.reviews.count, 'review' %>
-				</h4>
+				<div id="review-summary">
+					<div id="review-count">
+						<%= pluralize restaurant.reviews.count, 'review' %>
+					</div>
 
-				<h4 id="average-rating">Average rating <%= star_rating(restaurant.average_rating) %> </h4>
+					<div id="average-rating">Average rating <%= star_rating(restaurant.average_rating) %>
+					</div>
+				</div>
 				
 				<div id="restaurant-actions">
 					<span class="amend-button"><%= link_to "Edit", edit_restaurant_path(restaurant) %></span>
@@ -37,8 +41,8 @@
 
 					
 				<%= form_for [restaurant, @review] do |f| %>
-					<%= f.label :title %>
-					<%= f.text_area :title %>
+					<span id="form-test"><%= f.label :title %>
+					<%= f.text_area :title %></span>
 
 					<%= f.label :thoughts %>
 					<%= f.text_area :thoughts %>
@@ -51,17 +55,19 @@
 				
 	
 				<ul>
+					<div id="review-container">
 					<% restaurant.reviews.reverse.each do |review| %>
 						<li>
 							<strong><%= review.title %></strong>
-							<%= review.thoughts %>
+							<%= review.thoughts %><br>
 							<strong><%= star_rating(review.rating) %></strong>
 						</li>
 					<% end %>
+					</div>
 				</ul>
 
-
 			</div>
+
 		<% end%>
 	<% else %>
 		No restaurants yet
