@@ -18,6 +18,10 @@ describe ReviewsHelper do
   		expect(star_rating(5)).to eq("★★★★★")
   	end
 
+  	it 'shows 3 full stars and 3 empty stars when the rating is 3' do
+  		expect(star_rating(3)).to eq("★★★☆☆")
+  	end
+
   end
 
 
