@@ -2,14 +2,15 @@ $(document).ready(function() {
 	$('.new_review').on('submit', function(event) {
 		event.preventDefault();
 
-			var siblingList = $(this).siblings('ul');
-
 			$.post($(this).attr('action'), $(this).serialize(), function(response) {
 				
 				var template = $('#ajax-reviews').html();
 					var rendered = Mustache.render(template, response);
-						siblingList.prepend(rendered);
-
+						var targetId = response.restaurant.id;
+							var currentRestaurant = $('.restaurant-parent-container[data-id=' + targetId + ']');
+							currentRestaurant.find('ul').prepend(rendered);
+							currentRestaurant.find('.average-rating').text('Average rating ' + response.restaurant.average_rating_stars);
+							currentRestaurant.find('.review-count').text(response.restaurant.review_count);
 			}, 'json');
 	
 	})

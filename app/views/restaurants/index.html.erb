@@ -5,10 +5,11 @@
 <template id="ajax-reviews">
 	<li>
 
-	<strong> {{ title }} </strong><br>
-			{{ thoughts }}<br>
-			{{ star_rating }}
+	<strong> {{ #review }} {{ title }} {{ /review }}</strong><br>
+			{{ #review }} {{ thoughts }} {{ /review }}<br>
+			{{ #review }} {{ star_rating }} {{ /review }}
 	</li>
+
 </template>
 
 	
@@ -18,18 +19,18 @@
 
 		<% @restaurants.each do |restaurant| %>
 
-			<div id="restaurant-parent-container">
+			<div class="restaurant-parent-container" data-id="<%= restaurant.id %>">
 
 				<span class="restaurant-name">
 					<h2><%= restaurant.name %> | <%= restaurant.cuisine %></h2>
 				</span>
 
 				<div id="review-summary">
-					<div id="review-count">
+					<div class="review-count">
 						<%= pluralize restaurant.reviews.count, 'review' %>
 					</div>
 
-					<div id="average-rating">Average rating <%= star_rating(restaurant.average_rating) %>
+					<div class="average-rating">Average rating <%= star_rating(restaurant.average_rating) %>
 					</div>
 				</div>
 				
@@ -52,9 +53,9 @@
 					<%= f.submit 'Leave Review' %>
 				<% end %>
 				
-	
+				<div id="review-container">
 				<ul>
-					<div id="review-container">
+					
 					<% restaurant.reviews.reverse.each do |review| %>
 						<li>
 							<strong><%= review.title %></strong><br>
@@ -62,8 +63,9 @@
 							<strong><%= star_rating(review.rating) %></strong>
 						</li>
 					<% end %>
-					</div>
+					
 				</ul>
+				</div>
 
 			</div>
 
