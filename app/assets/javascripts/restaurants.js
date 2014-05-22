@@ -1,9 +1,10 @@
 $(document).ready(function() {
-	submit_review();
+	submitReview();
+	createRestaurant();
 
 })
 
-function submit_review() {
+function submitReview() {
 	$('.new_review').on('submit', function(event) {
 		event.preventDefault();
 
@@ -20,7 +21,8 @@ function submit_review() {
 	})
 }
 
-function create_restaurant() {
-		$('.new_review').on('submit', function(event) {
+function createRestaurant() {
+	$('.new_restaurant').on('submit', function(event) {
 		event.preventDefault();
+	})
 }
