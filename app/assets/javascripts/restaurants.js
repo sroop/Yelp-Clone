@@ -12,7 +12,5 @@ $(document).ready(function() {
 							currentRestaurant.find('.average-rating').text('Average rating ' + response.restaurant.average_rating_stars);
 							currentRestaurant.find('.review-count').text(response.restaurant.review_count);
 			}, 'json');
-	
 	})
-
 })

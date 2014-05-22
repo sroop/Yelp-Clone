@@ -41,11 +41,11 @@
 
 					
 				<%= form_for [restaurant, @review] do |f| %>
-					<span id="form-test"><%= f.label :title %>
-					<%= f.text_area :title %></span>
+			
+					<%= f.text_area :title, {placeholder: "Title"} %>
 
-					<%= f.label :thoughts %>
-					<%= f.text_area :thoughts %>
+					
+					<%= f.text_area :thoughts, {placeholder: "Thoughts"}  %>
 
 					<%= f.label :rating %>
 					<%= f.select :rating, 1..5 %>
