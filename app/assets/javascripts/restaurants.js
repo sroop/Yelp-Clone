@@ -7,7 +7,6 @@ $(document).ready(function() {
 function submitReview() {
 	disableButton('.new_review', function(form){
 		$.post($(form).attr('action'), $(form).serialize(), function(response) {
-			
 			var template = $('#ajax-reviews').html();
 				var rendered = Mustache.render(template, response);
 					var targetId = response.restaurant.id;
@@ -33,7 +32,7 @@ function createRestaurant() {
 }
 
 function disableButton(className, callback) {
-	$(className).on('submit', function(event) {
+	$('body').on('submit', className, function(event) {
 		event.preventDefault();
 		callback(this);
 	})

@@ -4,26 +4,55 @@
 
 <template id="ajax-reviews">
 	<li>
-	<strong> {{ #review }} {{ title }} {{ /review }}</strong><br>
+	<strong>{{ #review }} {{ title }} {{ /review }}</strong><br>
 			{{ #review }} {{ thoughts }} {{ /review }}<br>
 			{{ #review }} {{ star_rating }} {{ /review }}
 	</li>
 </template>
 
+
 <template id="ajax-restaurant">
 
-<div class="restaurant-parent-container">
-<span class="restaurant-name"> {{ name }} | {{ cuisine }} </span>
-</div>
+	<div class="restaurant-parent-container" data-id="{{ id }}">
 
-<div id="restaurant-actions">
-					<span class="amend-button"><a href="/restaurants/{{id}}/edit">✐</a></span>
-					<span class="amend-button"><a href="/restaurants/{{id}}" data-confirm="Are you sure?" data-method="delete" rel="nofollow">✖</a></span>
-</div>
+		<span class="restaurant-name"> {{ name }} | {{ cuisine }} </span>
+
+		<div id="review-summary">
+			<div class="review-count">
+				0 reviews
+			</div>
+
+			<div class="average-rating">
+				Average rating N/A
+			</div>
+		</div>
+
+		<div id="restaurant-actions">
+			<span class="amend-button"><a href="/restaurants/{{id}}/edit">✐</a></span>
+			<span class="amend-button"><a href="/restaurants/{{id}}" data-confirm="Are you sure?" data-method="delete" rel="nofollow">✖</a></span>
+		</div>
+
+		<form accept-charset="UTF-8" action="/restaurants/{{id}}/reviews" class="new_review" id="new_review" method="post">
+			<textarea id="review_title" name="review[title]" placeholder="Title"></textarea>
+			<textarea id="review_thoughts" name="review[thoughts]" placeholder="Thoughts"></textarea>
+
+			<label for="review_rating">Rating</label>
+			<select id="review_rating" name="review[rating]"><option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			<input name="commit" type="submit" value="Leave Review">
+		</form>
+
+	</div>
 
 </template>
 
-	<%= render 'form' %>
+
+
+<%= render 'form' %>
 
 <section class="restaurant-list">
 
