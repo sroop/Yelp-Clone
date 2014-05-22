@@ -31,7 +31,7 @@
 	font-family: "Aldrich";
 }
 
-.amend-button {
+.amend-button a {
 	display: inline-block;
 	margin-top: -7px;
 	margin-left: 10px;
@@ -41,7 +41,7 @@
 	color: black;
 }
 
-.amend-button:hover {
+.amend-button a:hover {
 	opacity: 1;
 	text-decoration: none;
 }
