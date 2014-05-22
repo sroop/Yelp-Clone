@@ -5,10 +5,9 @@
 <template id="ajax-reviews">
 	<li>
 
-	<strong> {{ title }} </strong>
-			{{ thoughts }}
-			{{ rating }}
-
+	<strong> {{ title }} </strong><br>
+			{{ thoughts }}<br>
+			{{ star_rating }}
 	</li>
 </template>
 
@@ -46,7 +45,7 @@
 
 					<%= f.label :thoughts %>
 					<%= f.text_area :thoughts %>
-					
+
 					<%= f.label :rating %>
 					<%= f.select :rating, 1..5 %>
 
