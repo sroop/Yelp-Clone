@@ -3,6 +3,7 @@ class RestaurantsController < ApplicationController
 	def index
 		@restaurants = Restaurant.all
 		@review = Review.new
+		@restaurant = Restaurant.new
 	end
 
 	def new
