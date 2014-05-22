@@ -1,4 +1,9 @@
 $(document).ready(function() {
+	submit_review();
+
+})
+
+function submit_review() {
 	$('.new_review').on('submit', function(event) {
 		event.preventDefault();
 
@@ -13,4 +18,9 @@ $(document).ready(function() {
 							currentRestaurant.find('.review-count').text(response.restaurant.review_count);
 			}, 'json');
 	})
-})
+}
+
+function create_restaurant() {
+		$('.new_review').on('submit', function(event) {
+		event.preventDefault();
+}
