@@ -4,17 +4,29 @@
 
 <template id="ajax-reviews">
 	<li>
-
 	<strong> {{ #review }} {{ title }} {{ /review }}</strong><br>
 			{{ #review }} {{ thoughts }} {{ /review }}<br>
 			{{ #review }} {{ star_rating }} {{ /review }}
 	</li>
+</template>
+
+<template id="ajax-restaurant">
+
+<div class="restaurant-parent-container">
+<span class="restaurant-name"> {{ name }} | {{ cuisine }} </span>
+</div>
+
+<div id="restaurant-actions">
+					<span class="amend-button"><a href="/restaurants/{{id}}/edit">✐</a></span>
+					<span class="amend-button"><a href="/restaurants/{{id}}" data-confirm="Are you sure?" data-method="delete" rel="nofollow">✖</a></span>
+</div>
 
 </template>
 
 	<%= render 'form' %>
 
-<section id="restaurant-list">
+<section class="restaurant-list">
+
 	<% if @restaurants.any? %>
 
 		<% @restaurants.each do |restaurant| %>
@@ -70,6 +82,7 @@
 			</div>
 
 		<% end%>
+
 	<% else %>
 		No restaurants yet
 	<% end %>

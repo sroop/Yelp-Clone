@@ -20,9 +20,16 @@ function submitReview() {
 }
 
 function createRestaurant() {
-	disableButton('.new_restaurant', function(){
+	disableButton('.new_restaurant', function(form){
+		$.post($(form).attr('action'), $(form).serialize(), function(response){
+
+			var template = $('#ajax-restaurant').html();
+				var rendered = Mustache.render(template, response);
+					$('.restaurant-list').prepend(rendered);
+
+		}, 'json');
 		
-	});
+	})
 }
 
 function disableButton(className, callback) {
