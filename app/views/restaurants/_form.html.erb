@@ -11,14 +11,16 @@
 <% end %>
 
 
-<%= form_for @restaurant do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name, required: true %>
+<section class="create-form">
+  <%= form_for @restaurant do |f| %>
+  	<%= f.label :name %>
+  	<%= f.text_field :name, required: true %>
 
-	<%= f.label :cuisine %>
-	<%= f.text_field :cuisine, required: true %>
+  	<%= f.label :cuisine %>
+  	<%= f.text_field :cuisine, required: true %>
 
-	<%= f.submit 'Add' %>
+  	<%= f.submit 'Add' %>
 
-<% end %>
+  <% end %>
+</section>
 

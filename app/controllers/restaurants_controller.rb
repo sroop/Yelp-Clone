@@ -13,7 +13,7 @@ class RestaurantsController < ApplicationController
 	def create
 		@restaurant = Restaurant.new( params[:restaurant].permit(:name, :cuisine) )
 		if @restaurant.save
-			render 'create', content_type: :json
+			render 'create.json', content_type: :json
 		else
 			# restaurant.errors.full_messages
 			render('new')

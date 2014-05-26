@@ -1,5 +1,6 @@
 <header id="yelp-header">
 <div id="create-restaurant"><%= link_to "Create a restaurant", new_restaurant_path %></div>
+<%= render 'form' %>
 </header>
 
 <template id="ajax-reviews">
@@ -59,10 +60,6 @@
 	</div>
 
 </template>
-
-
-
-<%= render 'form' %>
 
 <section class="restaurant-list">
 
