@@ -1,6 +1,6 @@
 <header id="yelp-header">
-<div id="create-restaurant"><%= link_to "Create a restaurant", new_restaurant_path %></div>
-<%= render 'form' %>
+	<div id="create-restaurant"><%= link_to "Create a restaurant", new_restaurant_path %></div>
+	<%= render 'form' %>
 </header>
 
 <template id="ajax-reviews">
@@ -82,10 +82,12 @@
 					</div>
 				</div>
 				
-				<div id="restaurant-actions">
-					<span class="amend-button"><%= link_to "✐", edit_restaurant_path(restaurant) %></span>
-					<span class="amend-button"><%= link_to "✖", restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' } %></span>
-				</div>
+				 <% if user_signed_in? %>
+					<div id="restaurant-actions">
+						<span class="amend-button"><%= link_to "✐", edit_restaurant_path(restaurant) %></span>
+						<span class="amend-button"><%= link_to "✖", restaurant_path(restaurant), method: :delete, data: { confirm: 'Are you sure?' } %></span>
+					</div>
+				<% end %>
 
 					
 				<%= form_for [restaurant, @review] do |f| %>
